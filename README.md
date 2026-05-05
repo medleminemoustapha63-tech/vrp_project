@@ -135,5 +135,5 @@ pour résoudre des problèmes réels de logistique et de gestion.
 
 👨‍💻 Auteur
 
-Nom : [Ton Nom]
+Nom : [medlemine/med el moustapha/elhamewi]
 Projet universitaire — Recherche Opérationnelle
