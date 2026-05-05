@@ -1,6 +1,6 @@
-🚀 Projet d’Optimisation — Recherche Opérationnelle
+ Projet d’Optimisation — Recherche Opérationnelle
 
-📌 Description
+ Description
 
 Ce projet contient trois problèmes d’optimisation appliqués à des cas réels en Mauritanie (RIM) :
 
