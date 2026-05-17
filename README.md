@@ -135,5 +135,108 @@ pour résoudre des problèmes réels de logistique et de gestion.
 
 👨‍💻 Auteur
 
+<<<<<<< HEAD
 Nom : [medlemine/med el moustapha/elhamewi]
 Projet universitaire — Recherche Opérationnelle
+=======
+Nom : [Ton Nom]
+Projet universitaire — Recherche Opérationnelle
+
+
+# 🚦 Optimisation de la circulation routière
+
+##  Description
+
+Ce projet utilise OR-Tools pour optimiser les feux de circulation dans une intersection.
+
+L’objectif est de :
+- réduire le temps d’attente des voitures
+- améliorer la circulation
+- optimiser les durées des feux verts
+
+---
+
+# Technologies utilisées
+
+- Python 🐍
+- OR-Tools CP-SAT
+
+---
+
+# Principe du projet
+
+Chaque route possède :
+- un nombre de voitures
+- un temps de feu vert
+
+Le solver cherche :
+- la meilleure durée des feux
+- avec un temps total limité
+
+---
+
+#  Objectif
+
+Minimiser :
+- le temps d’attente total des voitures
+
+---
+
+#  Contraintes
+
+- Temps minimum des feux
+- Temps maximum des feux
+- Somme des feux limitée
+
+
+---
+
+
+#  Planification des examens universitaires
+
+##  Description
+
+Ce projet utilise OR-Tools pour organiser les examens universitaires sans conflits.
+
+Le système attribue :
+- des créneaux horaires
+- aux différentes matières
+
+tout en respectant les contraintes.
+
+---
+
+#  Technologies utilisées
+
+- Python 🐍
+- OR-Tools CP-SAT
+
+---
+
+#  Principe du projet
+
+Chaque matière reçoit :
+- un créneau d’examen
+
+Le solver vérifie :
+- qu’aucune matière ne partage le même créneau
+
+---
+
+#  Objectif
+
+Créer un planning :
+- simple
+- optimisé
+- sans conflits
+
+---
+
+# Contraintes
+
+- Deux examens ne peuvent pas avoir le même horaire
+- Respect des créneaux disponibles
+
+---
+
+>>>>>>> ed6e670 (Add README files for traffic and exam projects)
