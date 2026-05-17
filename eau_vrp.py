@@ -11,7 +11,7 @@ distance_matrix = [
     [25, 30, 20, 15, 0],
 ]
 
-# 🔹 demandes (quantité d’eau)
+# 🔹 demandes (quantité d’eau) quantite demande par chaque ville
 demands = [0, 200, 300, 400, 100]
 
 # 🔹 paramètres
@@ -20,13 +20,16 @@ num_vehicles = 2
 depot = 0
 
 # 🔹 manager + model
+# convertir les indices internes en villes reelles
 manager = pywrapcp.RoutingIndexManager(len(distance_matrix), num_vehicles, depot)
+# solver principal qui cherche les meilleures routes
 routing = pywrapcp.RoutingModel(manager)
 
-# 🔹 cost function (distance)
+# 🔹 cost function (distance) retourne le cout entre deux villes
 def distance_callback(from_index, to_index):
     return distance_matrix[manager.IndexToNode(from_index)][manager.IndexToNode(to_index)]
 
+# minimiser la distance totale
 routing.SetArcCostEvaluatorOfAllVehicles(
     routing.RegisterTransitCallback(distance_callback)
 )
@@ -34,7 +37,7 @@ routing.SetArcCostEvaluatorOfAllVehicles(
 # 🔹 demand (capacity constraint)
 def demand_callback(from_index):
     return demands[manager.IndexToNode(from_index)]
-
+# ajouter la contrinte de capacite des camions
 routing.AddDimensionWithVehicleCapacity(
     routing.RegisterUnaryTransitCallback(demand_callback),
     0,
@@ -49,12 +52,12 @@ solution = routing.SolveWithParameters(search_parameters)
 
 # 🔹 affichage avec distances
 if solution:
-    total_distance = 0  # 🔥 distance totale
+    total_distance = 0  # distance totale
 
     for v in range(num_vehicles):
         index = routing.Start(v)
         route = []
-        route_distance = 0  # 🔥 distance de ce camion
+        route_distance = 0  #  distance de ce camion
 
         while not routing.IsEnd(index):
             previous_index = index
@@ -62,7 +65,7 @@ if solution:
 
             index = solution.Value(routing.NextVar(index))
 
-            # 🔥 calcul de distance
+            #  calcul de distance
             route_distance += routing.GetArcCostForVehicle(
                 previous_index, index, v
             )
